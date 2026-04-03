@@ -26,6 +26,7 @@ CREATE DATABASE mylocaldb;
 CREATE USER myuser WITH PASSWORD '1';
 GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;
 \q
+```
 
 <img width="362" height="231" alt="{9FA1E5AF-9888-4399-8E9D-5BC74B3A2F52}" src="https://github.com/user-attachments/assets/86cabc54-5698-427e-8d9e-73395014c19a" />
 
