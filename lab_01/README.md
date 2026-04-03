@@ -14,6 +14,7 @@
 Научиться формировать запросы на выборку данных (SELECT) с использованием фильтрации, сортировки и логических операторов. Освоить операции манипулирования данными (CRUD) в безопасной локальной среде.
 
 ---
+## Ход работы
 
 Первые два задания из первой и второй части лабораторной были выполнены в в базе данных (bi_sql_data_student) преподавателя - Босенко Тимура Муртазовича, а третьи задания из первой и второй части лабораторной были выполнены уже на моей локальной базе данных (mylocaldb).
 
@@ -37,7 +38,10 @@ GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;
 
 ### 1.1. Персонал (Salespeople)
 
+**Задание:** Вывести `username` первых 10 нанятых женщин-продавцов. Отсортировать по `hire_date` от самой ранней к самой поздней. Написать аналогичный запрос для мужчин-продавцов.
+
 **Запрос 1.1.1. Первые 10 женщин-продавцов**
+
 ```sql
 select username
 from salespeople
@@ -49,7 +53,7 @@ limit 10;
 <img width="170" height="323" alt="{1FD147BE-FCE5-4B2A-945A-F7FDCB111C08}" src="https://github.com/user-attachments/assets/76edb3cc-3f9b-4e12-91b1-6c5ccfe0a382" />
 
 
-### Запрос 1.1.2. Первые 10 мужчин-продавцов
+**Запрос 1.1.2. Первые 10 мужчин-продавцов**
 
 ``` sql
 select username
@@ -61,12 +65,19 @@ limit 10;
 
 <img width="160" height="326" alt="{01E938B9-5E20-439B-B946-43A12C050950}" src="https://github.com/user-attachments/assets/567223d2-194b-4b73-b820-50804a1a65e4" />
 
-
 ---
 
 ### 1.2. Клиенты (Customers)
 
-Запрос 1.2.1. Email клиентов из Florida (FL)
+**Задание:**
+
+1. Получить все email клиентов из штата Флорида (FL), отсортированные в алфавитном порядке.
+
+2. Получить имена, фамилии и email клиентов из города Нью-Йорк (New York City), штат Нью-Йорк (NY). Отсортировать по фамилии, затем по имени.
+
+3. Получить всех клиентов с их номерами телефонов, отсортированных по дате добавления в базу (date_added).
+
+**Запрос 1.2.1. Email клиентов из Florida (FL)**
 
 ``` sql
 select email
@@ -78,7 +89,7 @@ order by email;
 <img width="185" height="467" alt="{02983DE1-C5D4-4A0D-95AA-E007BA559DD6}" src="https://github.com/user-attachments/assets/fbb09363-aa5c-4b34-a9f8-33817e3154d2" />
 
 
-Запрос 1.2.2. Клиенты из New York City, NY
+**Запрос 1.2.2. Клиенты из New York City, NY**
 
 ``` sql
 select last_name, first_name, email
@@ -90,7 +101,7 @@ order by last_name, first_name;
 <img width="376" height="464" alt="{0DE6400B-3B62-46C7-BCF3-AB39B327F9E0}" src="https://github.com/user-attachments/assets/778f1f07-f74a-4352-bd6c-b3f19c79d6a9" />
 
 
-Запрос 1.2.3. Клиенты с телефоном
+**Запрос 1.2.3. Клиенты с телефоном**
 
 ``` sql
 select customer_id, first_name, last_name, phone, date_added
@@ -121,7 +132,17 @@ psql -h localhost -p 5433 -U postgres -d mylocaldb -c "\dt"
 
 <img width="597" height="465" alt="{F5111477-76B7-4EF0-AA9E-8C00B0108D47}" src="https://github.com/user-attachments/assets/52a2a86f-ed81-4ad8-9bfc-864dce12c9ce" />
 
-Теперь поочерёдно выполняем запросы
+**Задание:**
+
+1. Создать таблицу customers_nyc, скопировав данные клиентов из города New York City (штат NY).
+
+2. Удалить из новой таблицы клиентов с индексом 10014.
+
+3. Добавить текстовый столбец event.
+
+5. Заполнить столбец event значением 'thank-you party'.
+
+**Создание таблицы customers_nyc**
 
 ``` sql
 create table customers_nyc as
@@ -130,11 +151,15 @@ where city = 'New York City' and state = 'NY';
 ```
 <img width="559" height="484" alt="{773EDC29-4423-4FAD-A998-C314F1A7B372}" src="https://github.com/user-attachments/assets/498166c1-f9f6-409f-984b-76e7bb68ef68" />
 
+**Проверка: сколько записей скопировалось**
+
 ``` sql
 select count(*) from customers_nyc;
 ```
 
 <img width="474" height="375" alt="{65B3148C-A0C5-4247-8FD9-A7A40ED8A540}" src="https://github.com/user-attachments/assets/05562ede-d74b-49f1-b365-7aec689cd79d" />
+
+**Удаление клиентов с индексом 10014**
 
 ``` sql
 delete from customers_nyc
@@ -142,22 +167,37 @@ where postal_code = '10014';
 ```
 <img width="537" height="407" alt="{D197C1DF-430E-4843-877F-735C78F3026D}" src="https://github.com/user-attachments/assets/b71357a6-09f0-4741-8f3a-c7dbc25f5b64" />
 
+**Проверка: сколько осталось после удаления**
+
+``` sql
+select count(*) from customers_nyc;
+```
+<img width="513" height="372" alt="{DA64D53D-2FB0-49FE-AF30-2D3F6E0E3A86}" src="https://github.com/user-attachments/assets/77d2267f-9620-4324-81e4-4f555c569695" />
+
+**Добавление столбца event**
+
 ``` sql
 alter table customers_nyc
 add column event text;
 ```
 <img width="527" height="402" alt="{97361BD3-7ACA-4BCE-808E-644E84C55DBE}" src="https://github.com/user-attachments/assets/2bc782d6-ed8b-4e7b-8a2b-f68d95315c4e" />
 
+**Заполнение столбца event**
+
 ``` sql
 update customers_nyc
 set event = 'thank-you party';
 ```
+<img width="549" height="402" alt="{F0787FA8-D490-4794-BE68-14BD9639D4C0}" src="https://github.com/user-attachments/assets/2ffe48d3-5d01-4ce3-abe7-0d2f8902e1f7" />
+
+**Финальная проверка для отчёта**
 
 ``` sql
 select customer_id, first_name, last_name, postal_code, event
 from customers_nyc
 limit 20;
 ```
+<img width="682" height="492" alt="{74884F84-B71E-4EF1-B99A-D54C3D34786B}" src="https://github.com/user-attachments/assets/9410d7bb-f3ad-43dd-a3f5-dba95b7192f0" />
 
 ---
 
