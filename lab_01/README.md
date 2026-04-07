@@ -14,7 +14,7 @@
 ---
 ## 🛠️ Ход работы
 
-### Среда выполнения
+### 💻 Среда выполнения
 
 Лабораторная работа выполнялась в двух средах:
 
@@ -57,6 +57,8 @@
 
 #### 1. Создание базы данных и пользователя (в терминале виртуальной машины)
 
+Для выполнения CRUD-операций была создана локальная база данных `mylocaldb` и пользователь `myuser` с паролем `1`.
+
 ```bash
 sudo -u postgres psql -p 5433
 
@@ -65,7 +67,28 @@ CREATE USER myuser WITH PASSWORD '1';
 GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;
 \q
 ```
-База данных создана, теперь можем подключаться к ней в DBeaver на в
+База данных была создана. К сожалению скриншота ответа от терминала у меня нет, но он выглядел так:
+
+```bash
+sudo -u postgres psql -p 5433             -- вход в консоль PostgreSQL, появление приглашения postgres=#.
+[sudo] password for dev: 
+psql (14.22 (Ubuntu 14.22-0ubuntu0.22.04.1))
+Type "help" for help.
+
+postgres=# CREATE DATABASE mylocaldb;
+CREATE DATABASE
+
+postgres=# CREATE USER myuser WITH PASSWORD '1';
+CREATE ROLE
+
+postgres=# GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;
+GRANT
+
+postgres=# \q
+dev@dev-vm:~$
+```
+
+, теперь можем подключаться к ней в DBeaver на виртуальной машине
 Результатом выполнения команды стало добавление базы данных mylocaldb в DBeaver на виртуальной машине, в которую я теперь спокойно могу скопировать любую талблицу из базы данных преподавателя
 
 <img width="362" height="231" alt="{9FA1E5AF-9888-4399-8E9D-5BC74B3A2F52}" src="https://github.com/user-attachments/assets/86cabc54-5698-427e-8d9e-73395014c19a" />
