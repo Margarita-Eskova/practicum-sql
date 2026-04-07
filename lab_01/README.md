@@ -38,7 +38,7 @@
 
 ### 2. Проверка подключения
 
-После ввода данных была выполнена проверка через **"Test Connection"** – получен статус **"Connected"**.
+После ввода данных была выполнена проверка через **"Test Connection"** – получен статус **"Connected"**, значит нажимаем **'Ok'**
 
 <img width="542" height="436" alt="{12E0BDB0-DC32-49EA-AC80-F1E487986251}" src="https://github.com/user-attachments/assets/6fa10ab8-69ac-46a4-8b63-bdc6a0e5fe9a" />
 
@@ -60,35 +60,32 @@
 Для выполнения CRUD-операций была создана локальная база данных `mylocaldb` и пользователь `myuser` с паролем `1`.
 
 ```bash
-sudo -u postgres psql -p 5433
-
-CREATE DATABASE mylocaldb;
-CREATE USER myuser WITH PASSWORD '1';
-GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;
-\q
-```
-База данных была создана. К сожалению скриншота ответа от терминала у меня нет, но он выглядел так:
-
-```bash
 sudo -u postgres psql -p 5433             -- вход в консоль PostgreSQL, появление приглашения postgres=#.
 [sudo] password for dev: 
 psql (14.22 (Ubuntu 14.22-0ubuntu0.22.04.1))
 Type "help" for help.
 
-postgres=# CREATE DATABASE mylocaldb;
+postgres=# CREATE DATABASE mylocaldb;    -- создаёт новую базу данных 'mylocaldb'
 CREATE DATABASE
 
-postgres=# CREATE USER myuser WITH PASSWORD '1';
+postgres=# CREATE USER myuser WITH PASSWORD '1';   -- создаёт нового пользователя 'myuser' с паролем '1'
 CREATE ROLE
 
-postgres=# GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE mylocaldb TO myuser;   -- выдаёт пользователю все права
 GRANT
 
-postgres=# \q
-dev@dev-vm:~$
+postgres=# \q      -- выход из консоли psql
+dev@dev-vm:~$      -- возврат в обычный терминал dev@dev-vm:~$
 ```
 
-, теперь можем подключаться к ней в DBeaver на виртуальной машине
+База данных была создана, теперь можем подключиться к ней в DBeaver на виртуальной машине. Вводим все необходимые для подключения параметры.
+
+<img width="542" height="594" alt="{D0293B8B-8F9F-4C31-AD7B-22712840A456}" src="https://github.com/user-attachments/assets/d7a3b184-86b4-4a71-802c-fe2c07e1aeb7" />
+
+После ввода данных была выполнена проверка через **"Test Connection"** – получен статус **"Connected"**, значит нажимаем **'Ok'**.
+
+<img width="541" height="594" alt="{C3E6C223-BCB5-4526-BF47-A0BB5CA97725}" src="https://github.com/user-attachments/assets/fa27ecdd-135b-4450-8ae0-f88702abdc2d" />
+
 Результатом выполнения команды стало добавление базы данных mylocaldb в DBeaver на виртуальной машине, в которую я теперь спокойно могу скопировать любую талблицу из базы данных преподавателя
 
 <img width="362" height="231" alt="{9FA1E5AF-9888-4399-8E9D-5BC74B3A2F52}" src="https://github.com/user-attachments/assets/86cabc54-5698-427e-8d9e-73395014c19a" />
