@@ -38,7 +38,7 @@
 
 ### 2. Проверка подключения
 
-После ввода данных была выполнена проверка через **Test Connection** – получен статус **Connected**.
+После ввода данных была выполнена проверка через **"Test Connection"** – получен статус **"Connected"**.
 
 <img width="542" height="436" alt="{12E0BDB0-DC32-49EA-AC80-F1E487986251}" src="https://github.com/user-attachments/assets/6fa10ab8-69ac-46a4-8b63-bdc6a0e5fe9a" />
 
