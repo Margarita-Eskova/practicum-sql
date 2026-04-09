@@ -45,7 +45,7 @@
 ### 3. Просмотр таблиц в базе преподавателя
 
 В DBeaver в дереве подключения были раскрыты:
-- `bi_sql_data_student` → `Schemas` → `public` → `Tables`
+- `bi_sql_data_student` → `public` → `Tables`
 
 Стали видны таблицы: `customers`, `salespeople`, `products`, `sales`, `emails`, `dealerships` и другие.
 
