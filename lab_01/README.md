@@ -356,7 +356,7 @@ select * from products
 where base_msrp > 1000;
 ```
 
-<img width="518" height="389" alt="1" src="https://github.com/user-attachments/assets/b4129538-adad-42f5-a07d-24c897e6f903" />
+<img width="465" height="392" alt="{EA9B44C0-82B9-491D-BB2B-2E32BC60E228}" src="https://github.com/user-attachments/assets/a82bac27-d203-4155-8859-c683dd58fb4c" />
 
 **Проверка: сколько записей скопировалось**
 
