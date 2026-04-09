@@ -204,13 +204,10 @@ order by date_added;
 
 **Задания:**
 
-1. Создать таблицу customers_nyc, скопировав данные клиентов из города New York City (штат NY).
-
+1. Создать таблицу `customers_nyc`, скопировав данные клиентов из города New York City (штат NY).
 2. Удалить из новой таблицы клиентов с индексом 10014.
-
-3. Добавить текстовый столбец event.
-
-5. Заполнить столбец event значением 'thank-you party'.
+3. Добавить текстовый столбец `event`.
+4. Заполнить столбец `event` значением 'thank-you party'.
 
 #### Подготовка: копирование исходной таблицы `customers`
 
@@ -360,6 +357,14 @@ where base_msrp > 1000;
 
 <img width="518" height="389" alt="1" src="https://github.com/user-attachments/assets/b4129538-adad-42f5-a07d-24c897e6f903" />
 
+**Проверка: сколько записей скопировалось**
+
+```sql
+select count(*) from high_price;
+```
+
+<img width="260" height="220" alt="{0FD0E911-25DB-4D2B-91FA-330917FC1357}" src="https://github.com/user-attachments/assets/24437e61-d5c3-4edf-9ebe-142715695c08" />
+
 **Увеличение цены на 10%**
 
 ``` sql
@@ -368,6 +373,14 @@ set base_msrp = base_msrp * 1.1;
 ```
 
 <img width="479" height="356" alt="2" src="https://github.com/user-attachments/assets/5672f6a2-8df1-44b3-a197-ffa4c76a5988" />
+
+**Проверка изменения цен**
+
+```sql
+select base_msrp from high_price;
+```
+
+<img width="277" height="281" alt="{987F21E4-314F-4568-A6A2-19BB547E3FAC}" src="https://github.com/user-attachments/assets/61c84755-4740-452d-a8cd-476461be8baf" />
 
 **Удаление товаров, произведённых до 2012 года**
 
