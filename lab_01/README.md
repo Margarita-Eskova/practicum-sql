@@ -126,7 +126,7 @@ passsword: 1
 
 **Задание:** вывести `username` первых 10 нанятых женщин-продавцов. Отсортировать по `hire_date` от самой ранней к самой поздней. Написать аналогичный запрос для мужчин-продавцов.
 
-**Запрос 1.1.1. Первые 10 женщин-продавцов**
+👩‍💼 **Запрос 1.1.1. Первые 10 женщин-продавцов**
 
 ```sql
 select username
@@ -139,7 +139,7 @@ limit 10;
 <img width="170" height="323" alt="{1FD147BE-FCE5-4B2A-945A-F7FDCB111C08}" src="https://github.com/user-attachments/assets/76edb3cc-3f9b-4e12-91b1-6c5ccfe0a382" />
 
 
-**Запрос 1.1.2. Первые 10 мужчин-продавцов**
+👨‍💼 **Запрос 1.1.2. Первые 10 мужчин-продавцов**
 
 ``` sql
 select username
@@ -163,7 +163,7 @@ limit 10;
 
 3. Получить всех клиентов с их номерами телефонов, отсортированных по дате добавления в базу (date_added).
 
-**Запрос 1.2.1. Email клиентов из Florida (FL)**
+📧 **Запрос 1.2.1. Email клиентов из Florida (FL)**
 
 ``` sql
 select email
@@ -175,7 +175,7 @@ order by email;
 <img width="185" height="467" alt="{02983DE1-C5D4-4A0D-95AA-E007BA559DD6}" src="https://github.com/user-attachments/assets/fbb09363-aa5c-4b34-a9f8-33817e3154d2" />
 
 
-**Запрос 1.2.2. Клиенты из New York City, NY**
+🗽 **Запрос 1.2.2. Клиенты из New York City, NY**
 
 ``` sql
 select last_name, first_name, email
@@ -187,7 +187,7 @@ order by last_name, first_name;
 <img width="376" height="464" alt="{0DE6400B-3B62-46C7-BCF3-AB39B327F9E0}" src="https://github.com/user-attachments/assets/778f1f07-f74a-4352-bd6c-b3f19c79d6a9" />
 
 
-**Запрос 1.2.3. Клиенты с телефоном**
+📞 **Запрос 1.2.3. Клиенты с телефоном**
 
 ``` sql
 select customer_id, first_name, last_name, phone, date_added
@@ -227,9 +227,10 @@ pg_dump -h localhost -p 5433 -U postgres -t customers teacher_data | psql -h loc
 
 ---
 
-#### ⚙️ Выполнение заданий
+#### ⚙️ Выполнение заданий ⚙️
 
-**Создание таблицы customers_nyc, скопировав данные клиентов из города New York City (штат NY)**
+📋 **Создание таблицы customers_nyc, скопировав данные клиентов из города New York City (штат NY)**
+Копирую клиентов из Нью-Йорка в новую таблицу.
 
 ``` sql
 create table customers_nyc as
@@ -239,7 +240,8 @@ where city = 'New York City' and state = 'NY';
 
 <img width="559" height="484" alt="16" src="https://github.com/user-attachments/assets/5f74fe09-cf7e-4531-9f31-12c29dcae685" />
 
-**Проверка: сколько записей скопировалось**
+🔢 **Проверка: сколько записей скопировалось**
+Убеждаюсь, что в новую таблицу попало 731 запись.
 
 ``` sql
 select count(*) from customers_nyc;
@@ -247,22 +249,26 @@ select count(*) from customers_nyc;
 
 <img width="474" height="375" alt="{65B3148C-A0C5-4247-8FD9-A7A40ED8A540}" src="https://github.com/user-attachments/assets/05562ede-d74b-49f1-b365-7aec689cd79d" />
 
-**Удаление клиентов с индексом 10014**
+🗑️ **Удаление клиентов с индексом 10014**
+Удаляю клиентов с почтовым индексом 10014.
 
 ``` sql
 delete from customers_nyc
 where postal_code = '10014';
 ```
 
+<img width="537" height="407" alt="18" src="https://github.com/user-attachments/assets/322ecbdf-f7c8-423b-ab64-6ebc3ee22b6a" />
 
-**Проверка: сколько осталось после удаления**
+🔢 **Проверка: сколько осталось после удаления**
+После удаления остаётся 704 записи.
 
 ``` sql
 select count(*) from customers_nyc;
 ```
 <img width="513" height="372" alt="{DA64D53D-2FB0-49FE-AF30-2D3F6E0E3A86}" src="https://github.com/user-attachments/assets/77d2267f-9620-4324-81e4-4f555c569695" />
 
-**Добавление столбца event**
+➕ **Добавление столбца event**
+Добавляю новый текстовый столбец для хранения информации о событии.
 
 ``` sql
 alter table customers_nyc
@@ -270,7 +276,8 @@ add column event text;
 ```
 <img width="527" height="402" alt="{97361BD3-7ACA-4BCE-808E-644E84C55DBE}" src="https://github.com/user-attachments/assets/2bc782d6-ed8b-4e7b-8a2b-f68d95315c4e" />
 
-**Заполнение столбца event**
+✍️ **Заполнение столбца event**
+Заполняю новый столбец значением 'thank-you party' для всех записей.
 
 ``` sql
 update customers_nyc
@@ -278,7 +285,8 @@ set event = 'thank-you party';
 ```
 <img width="549" height="402" alt="{F0787FA8-D490-4794-BE68-14BD9639D4C0}" src="https://github.com/user-attachments/assets/2ffe48d3-5d01-4ce3-abe7-0d2f8902e1f7" />
 
-**Финальная проверка**
+✅ **Финальная проверка**
+Вывожу первые 20 записей, чтобы убедиться, что все изменения применены корректно.
 
 ``` sql
 select customer_id, first_name, last_name, postal_code, event
@@ -293,7 +301,7 @@ limit 20;
 
 ### Задание 2.1. Товары типа 'scooter' дороже 500
 
-**Задание:** вывести все товары типа `'scooter'` с ценой (`base_msrp`) больше 500. Отсортировать результат по цене от самой высокой к самой низкой (по убыванию).
+🛴 **Задание:** вывести все товары типа `'scooter'` с ценой (`base_msrp`) больше 500. Отсортировать результат по цене от самой высокой к самой низкой (по убыванию).
 
 ``` sql
 select *
@@ -306,7 +314,7 @@ order by base_msrp desc;
 
 ### Задание 2.2. Продажи через интернет от 15000 до 30000
 
-**Задание:** вывести все продажи, совершенные через канал 'internet', с суммой продажи (sales_amount) в диапазоне от 15000 до 30000 включительно.
+🌐 **Задание:** вывести все продажи, совершенные через канал 'internet', с суммой продажи (sales_amount) в диапазоне от 15000 до 30000 включительно.
 
 ``` sql
 select *
@@ -346,11 +354,10 @@ password:1
 
 ---
 
+#### ⚙️ Выполнение заданий ⚙️
 
-
-#### ⚙️ Выполнение заданий
-
-**Создание таблицы `high_price` как копию товаров дороже 1000**
+💰 **Создание таблицы `high_price` как копию товаров дороже 1000**
+Копирую товары с ценой (base_msrp) больше 1000 в новую таблицу.
 
 ``` sql
 create table high_price as
@@ -360,7 +367,8 @@ where base_msrp > 1000;
 
 <img width="465" height="392" alt="{EA9B44C0-82B9-491D-BB2B-2E32BC60E228}" src="https://github.com/user-attachments/assets/a82bac27-d203-4155-8859-c683dd58fb4c" />
 
-**Проверка: сколько записей скопировалось**
+🔢 **Проверка: сколько записей скопировалось**
+Убеждаюсь, что в новую таблицу попало 5 записей. Это так и есть
 
 ```sql
 select count(*) from high_price;
@@ -368,7 +376,8 @@ select count(*) from high_price;
 
 <img width="260" height="220" alt="{0FD0E911-25DB-4D2B-91FA-330917FC1357}" src="https://github.com/user-attachments/assets/24437e61-d5c3-4edf-9ebe-142715695c08" />
 
-**Увеличение цены на 10%**
+📈 **Увеличение цены на 10%**
+Применяю повышение цены ко всем товарам в таблице.
 
 ``` sql
 update high_price
@@ -377,7 +386,8 @@ set base_msrp = base_msrp * 1.1;
 
 <img width="310" height="295" alt="{5F4832FF-8427-4E6C-952B-6BEB6102692D}" src="https://github.com/user-attachments/assets/9f7e0173-9f0b-48af-ad4f-40c2dce430ba" />
 
-**Проверка изменения цен**
+🔍 **Проверка изменения цен**
+Смотрю на первые 5 строк, чтобы убедиться, что цены действительно увеличились. Цени изменились, значит идём по заданию дальше.
 
 ```sql
 select base_msrp from high_price;
@@ -385,7 +395,8 @@ select base_msrp from high_price;
 
 <img width="277" height="281" alt="{987F21E4-314F-4568-A6A2-19BB547E3FAC}" src="https://github.com/user-attachments/assets/61c84755-4740-452d-a8cd-476461be8baf" />
 
-**Удаление товаров, произведённых до 2012 года**
+🗑️ **Удаление товаров, произведённых до 2012 года**
+Оставляю только те товары, которые были выпущены в 2012 году или позже.
 
 ``` sql
 delete from high_price
@@ -394,7 +405,8 @@ where production_start_date < '2012-01-01';
 
 <img width="424" height="326" alt="{1E5B6380-1DE0-47EA-915A-F3B664F448B7}" src="https://github.com/user-attachments/assets/01d789c2-b1e1-4ad2-8bb8-33e4b98f0b11" />
 
-**Финальная проверка**
+✅ **Финальная проверка**
+Вывожу все оставшиеся записи, чтобы убедиться, что цены обновлены, а старые товары удалены.
 
 ``` sql
 select * from high_price;
