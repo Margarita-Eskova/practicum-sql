@@ -299,7 +299,7 @@ where product_type = 'scooter' and base_msrp > 500
 order by base_msrp desc;
 ```
 
-Скриншот результата: [вставь скриншот]
+<img width="767" height="439" alt="{75A5A730-6B2B-417C-9408-6B01B87C4F97}" src="https://github.com/user-attachments/assets/536157e4-57d5-47fd-9437-2c579a8d3796" />
 
 ### Задание 2.2. Продажи через интернет от 15000 до 30000
 
@@ -309,9 +309,13 @@ from sales
 where channel = 'internet' and sales_amount between 15000 and 30000;
 ```
 
-Скриншот результата: [вставь скриншот]
+<img width="703" height="654" alt="{6CEEAC33-9CD2-44CC-90A6-0C461F798AE5}" src="https://github.com/user-attachments/assets/284a7488-2ea9-4380-aed9-3b0eea807be4" />
 
 ### Задание 2.3*. CRUD (локально, mylocaldb)
+
+Перед выполнением задания, я скопировала в локальную базу данных (mylocaldb) таблицу преподавателя
+
+<img width="623" height="443" alt="{FE0E5550-53B6-4538-8994-7405E93230D5}" src="https://github.com/user-attachments/assets/731fe1e6-faaf-4e48-a7e1-016f17d4b58e" />
 
 ``` sql
 create table high_price as
