@@ -228,6 +228,8 @@ pg_dump -h localhost -p 5433 -U postgres -t customers teacher_data | psql -h loc
 
 <img width="597" height="465" alt="{F5111477-76B7-4EF0-AA9E-8C00B0108D47}" src="https://github.com/user-attachments/assets/52a2a86f-ed81-4ad8-9bfc-864dce12c9ce" />
 
+#### Выполнение заданий
+
 **Создание таблицы customers_nyc, скопировав данные клиентов из города New York City (штат NY)**
 
 ``` sql
@@ -341,6 +343,8 @@ password:1
 Решила проверить наличие таблицы через запрос select с выводом в 5 строк
 
 <img width="685" height="463" alt="{EA296305-52BD-40CF-AAD2-AAB6DF12C9E1}" src="https://github.com/user-attachments/assets/9c70edd7-04a0-49c5-bf43-a78e7b452999" />
+
+#### Выполнение заданий
 
 **Создание таблицы `high_price` как копию товаров дороже 1000**
 
