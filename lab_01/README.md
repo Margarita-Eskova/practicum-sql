@@ -342,7 +342,7 @@ password:1
 
 **Таблица в 'mylocaldb'**
 
-Решила проверить наличие таблицы через запрос select с выводом в 5 строк
+Решила проверить наличие таблицы через select-запрос с выводом в 5 строк
 
 <img width="685" height="463" alt="{EA296305-52BD-40CF-AAD2-AAB6DF12C9E1}" src="https://github.com/user-attachments/assets/9c70edd7-04a0-49c5-bf43-a78e7b452999" />
 
