@@ -203,18 +203,6 @@ order by date_added;
 
 ### 1.3*. CRUD операции (локально, mylocaldb)
 
-Перед выполнением CRUD-операций, нужно скопировать таблицу customers из teacher_data через терминал на виртуальной машине:
-
-``` bash
-pg_dump -h localhost -p 5433 -U postgres -t customers teacher_data | psql -h localhost -p 5433 -U postgres -d mylocaldb
-
-Пароль: 1
-
-Проверка:
-
-psql -h localhost -p 5433 -U postgres -d mylocaldb -c "\dt"
-```
-
 Результат: таблица customers присутствует (50 000 записей).
 
 <img width="597" height="465" alt="{F5111477-76B7-4EF0-AA9E-8C00B0108D47}" src="https://github.com/user-attachments/assets/52a2a86f-ed81-4ad8-9bfc-864dce12c9ce" />
@@ -229,7 +217,21 @@ psql -h localhost -p 5433 -U postgres -d mylocaldb -c "\dt"
 
 5. Заполнить столбец event значением 'thank-you party'.
 
-**Создание таблицы customers_nyc**
+#### Подготовка: копирование исходной таблицы `customers`
+
+Перед выполнением CRUD-операций исходная таблица `customers` (50 000 записей) была скопирована из базы преподавателя `teacher_data` в мою локальную базу `mylocaldb`. Для этого в терминале виртуальной машины была выполнена команда:
+
+```bash
+pg_dump -h localhost -p 5433 -U postgres -t customers teacher_data | psql -h localhost -p 5433 -U postgres -d mylocaldb
+```
+
+**Результат команды:**
+
+**Таблица в 'mylocaldb'**
+
+<img width="597" height="465" alt="{F5111477-76B7-4EF0-AA9E-8C00B0108D47}" src="https://github.com/user-attachments/assets/52a2a86f-ed81-4ad8-9bfc-864dce12c9ce" />
+
+**Создание таблицы customers_nyc, скопировав данные клиентов из города New York City (штат NY)**
 
 ``` sql
 create table customers_nyc as
