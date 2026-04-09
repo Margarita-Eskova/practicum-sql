@@ -236,7 +236,8 @@ create table customers_nyc as
 select * from customers
 where city = 'New York City' and state = 'NY';
 ```
-<img width="559" height="484" alt="{773EDC29-4423-4FAD-A998-C314F1A7B372}" src="https://github.com/user-attachments/assets/498166c1-f9f6-409f-984b-76e7bb68ef68" />
+
+<img width="462" height="433" alt="{934A4E3D-6A5B-435E-8946-57ACC2BC9DA8}" src="https://github.com/user-attachments/assets/64f8a8f1-ff64-4db0-b36b-ef45021c06bf" />
 
 **Проверка: сколько записей скопировалось**
 
@@ -252,7 +253,7 @@ select count(*) from customers_nyc;
 delete from customers_nyc
 where postal_code = '10014';
 ```
-<img width="537" height="407" alt="{D197C1DF-430E-4843-877F-735C78F3026D}" src="https://github.com/user-attachments/assets/b71357a6-09f0-4741-8f3a-c7dbc25f5b64" />
+
 
 **Проверка: сколько осталось после удаления**
 
@@ -372,7 +373,7 @@ update high_price
 set base_msrp = base_msrp * 1.1;
 ```
 
-<img width="479" height="356" alt="2" src="https://github.com/user-attachments/assets/5672f6a2-8df1-44b3-a197-ffa4c76a5988" />
+<img width="310" height="295" alt="{5F4832FF-8427-4E6C-952B-6BEB6102692D}" src="https://github.com/user-attachments/assets/9f7e0173-9f0b-48af-ad4f-40c2dce430ba" />
 
 **Проверка изменения цен**
 
@@ -389,7 +390,7 @@ delete from high_price
 where production_start_date < '2012-01-01';
 ```
 
-<img width="547" height="319" alt="3" src="https://github.com/user-attachments/assets/85fca93c-5eec-4cb0-8234-17d00e6b956b" />
+<img width="424" height="326" alt="{1E5B6380-1DE0-47EA-915A-F3B664F448B7}" src="https://github.com/user-attachments/assets/01d789c2-b1e1-4ad2-8bb8-33e4b98f0b11" />
 
 **Финальная проверка**
 
@@ -397,7 +398,7 @@ where production_start_date < '2012-01-01';
 select * from high_price;
 ```
 
-<img width="894" height="276" alt="4" src="https://github.com/user-attachments/assets/bc7a608e-97ef-48fe-b222-afc703cbe543" />
+<img width="431" height="262" alt="{E1688A5F-62F5-4F66-9C92-A6E6AC3CCF9E}" src="https://github.com/user-attachments/assets/362e1e18-8c3f-4962-806a-7b7419ab8852" />
 
 ---
 
