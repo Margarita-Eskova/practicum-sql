@@ -237,7 +237,7 @@ select * from customers
 where city = 'New York City' and state = 'NY';
 ```
 
-<img width="462" height="433" alt="{934A4E3D-6A5B-435E-8946-57ACC2BC9DA8}" src="https://github.com/user-attachments/assets/64f8a8f1-ff64-4db0-b36b-ef45021c06bf" />
+<img width="559" height="484" alt="16" src="https://github.com/user-attachments/assets/5f74fe09-cf7e-4531-9f31-12c29dcae685" />
 
 **Проверка: сколько записей скопировалось**
 
