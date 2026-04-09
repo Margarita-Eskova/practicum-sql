@@ -437,7 +437,7 @@ select * from high_price;
 | Ресурс | Описание | Ссылка |
 |--------|----------|--------|
 | 📚 **Репозиторий GitHub** | Все материалы лабораторной работы | [`practicum-sql`](https://github.com/Margarita-Eskova/practicum-sql) |
-| 💾 **SQL-запросы** | Все запросы в одном файле | [`lab_01/sql`](https://github.com/Margarita-Eskova/practicum-sql/blob/main/lab_01/sql) |
+| 💾 **SQL-запросы** | 1 и 2 части sql-запросов в одной папке | [`lab_01/sql`](https://github.com/Margarita-Eskova/practicum-sql/blob/main/lab_01/sql) |
 | 📸 **Папка со скриншотами** | Все скриншоты результатов выполнения запросов | [`lab_01/screenshots/`](https://github.com/Margarita-Eskova/practicum-sql/tree/main/lab_01/screenshots) |
 | 🖥️ **Образ ВМ** | Виртуальная машина от преподавателя | [🔗 Скачать OVA](https://disk.yandex.ru/d/QifTz8pa5XJX-A) |
 | 🗄️ **Файлы дампа** | Дамп базы данных преподавателя | [🔗 Яндекс.Диск](https://disk.yandex.ru/d/p3ga3WZpmAw8-Q) |
