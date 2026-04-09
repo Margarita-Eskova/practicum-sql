@@ -110,6 +110,16 @@ dev@dev-vm:~$      -- возврат в обычный терминал dev@dev-
 
 ```bash
 psql -h localhost -p 5433 -U postgres -d teacher_data < /mnt/sql_dumb/bi_sql_data_student_dump.sql
+
+passsword: 1
+```
+
+### 3. Подключение к восстановленной базе в DBeaver
+
+После успешного восстановления база данных teacher_data автоматически стала доступна для работы в DBeaver. Подключение отобразилось в списке баз данных, что позволило сразу приступить к выполнению SELECT-запросов.
+
+<img width="564" height="537" alt="{F2AD3D58-A831-4227-B1CD-834CE458E786}" src="https://github.com/user-attachments/assets/ea40c91a-a3e0-4a30-8425-dee87b2587b2" />
+
 ## Часть 1. Общие задания (Guided Labs)
 
 
