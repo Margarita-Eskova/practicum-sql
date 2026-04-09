@@ -203,11 +203,7 @@ order by date_added;
 
 ### 1.3*. CRUD операции (локально, mylocaldb)
 
-Результат: таблица customers присутствует (50 000 записей).
-
-<img width="597" height="465" alt="{F5111477-76B7-4EF0-AA9E-8C00B0108D47}" src="https://github.com/user-attachments/assets/52a2a86f-ed81-4ad8-9bfc-864dce12c9ce" />
-
-**Задание:**
+**Задания:**
 
 1. Создать таблицу customers_nyc, скопировав данные клиентов из города New York City (штат NY).
 
@@ -226,6 +222,8 @@ pg_dump -h localhost -p 5433 -U postgres -t customers teacher_data | psql -h loc
 ```
 
 **Результат команды:**
+
+<img width="668" height="455" alt="{AB786445-7CBC-498E-8818-D9BA7AEA19B1}" src="https://github.com/user-attachments/assets/1ab851b1-345f-4232-b31a-93b04f2d5178" />
 
 **Таблица в 'mylocaldb'**
 
@@ -279,7 +277,7 @@ set event = 'thank-you party';
 ```
 <img width="549" height="402" alt="{F0787FA8-D490-4794-BE68-14BD9639D4C0}" src="https://github.com/user-attachments/assets/2ffe48d3-5d01-4ce3-abe7-0d2f8902e1f7" />
 
-**Финальная проверка для отчёта**
+**Финальная проверка**
 
 ``` sql
 select customer_id, first_name, last_name, postal_code, event
@@ -315,25 +313,67 @@ where channel = 'internet' and sales_amount between 15000 and 30000;
 
 ### Задание 2.3*. CRUD (локально, mylocaldb)
 
-Перед выполнением задания, я скопировала в локальную базу данных (mylocaldb) таблицу преподавателя
+**Задания:**
+
+1. Создать таблицу `high_price` как копию товаров дороже 1000.
+
+2. Увеличить цену на 10%.
+
+3. Удалить товары, произведённые до 2012 года.
+
+#### Подготовка: копирование исходной таблицы `products`
+
+Для выполнения этого задания потребовалась таблица `products` из базы преподавателя. Она была скопирована в мою локальную базу `mylocaldb` командой в терминале виртуальной машины:
+
+```bash
+pg_dump -h localhost -p 5433 -U postgres -t products teacher_data | psql -h localhost -p 5433 -U postgres -d mylocaldb
+password:1
+```
+**Результат команды:**
 
 <img width="623" height="443" alt="{FE0E5550-53B6-4538-8994-7405E93230D5}" src="https://github.com/user-attachments/assets/731fe1e6-faaf-4e48-a7e1-016f17d4b58e" />
+
+**Таблица в 'mylocaldb'**
+
+Решила проверить наличие таблицы через запрос select с выводом в 5 строк
+
+<img width="685" height="463" alt="{EA296305-52BD-40CF-AAD2-AAB6DF12C9E1}" src="https://github.com/user-attachments/assets/9c70edd7-04a0-49c5-bf43-a78e7b452999" />
+
+**Создание таблицы `high_price` как копию товаров дороже 1000**
 
 ``` sql
 create table high_price as
 select * from products
 where base_msrp > 1000;
+```
 
+<img width="518" height="389" alt="1" src="https://github.com/user-attachments/assets/b4129538-adad-42f5-a07d-24c897e6f903" />
+
+**Увеличение цены на 10%**
+
+``` sql
 update high_price
 set base_msrp = base_msrp * 1.1;
+```
 
+<img width="479" height="356" alt="2" src="https://github.com/user-attachments/assets/5672f6a2-8df1-44b3-a197-ffa4c76a5988" />
+
+**Удаление товаров, произведённых до 2012 года**
+
+``` sql
 delete from high_price
 where production_start_date < '2012-01-01';
+```
 
+<img width="547" height="319" alt="3" src="https://github.com/user-attachments/assets/85fca93c-5eec-4cb0-8234-17d00e6b956b" />
+
+**Финальная проверка**
+
+``` sql
 select * from high_price;
 ```
 
-Скриншот результата: [вставь скриншот]
+<img width="894" height="276" alt="4" src="https://github.com/user-attachments/assets/bc7a608e-97ef-48fe-b222-afc703cbe543" />
 
 ---
 
