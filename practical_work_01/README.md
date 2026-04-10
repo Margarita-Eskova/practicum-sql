@@ -68,7 +68,7 @@ ORDER BY number_of_sales DESC;
 
 **Результат:**
 
-![1_a](./screenshots/1_a.png)
+![1_a.png](./screenshots/1_a.png)
 
 **Анализ:**  
 - Наибольшее количество продаж приходится на **вторник** (5 456 продаж)  
