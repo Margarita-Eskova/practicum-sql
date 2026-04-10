@@ -27,7 +27,7 @@
 
 **Результат проверки подключения:**
 
-<img width="543" height="429" alt="test_connection" src="https://github.com/user-attachments/assets/8fdb133b-0467-476a-9a8d-711f63ffb524" />
+![test_connection.png](./screenshot/test_connection.png)
 
 Подключение успешно, можно выполнять запросы.
 
@@ -68,7 +68,7 @@ ORDER BY number_of_sales DESC;
 
 **Результат:**
 
-![1_a.png](./screenshots/1_a.png)
+![1_A.png](./screenshot/1_A.png)
 
 **Анализ:**  
 - Наибольшее количество продаж приходится на **вторник** (5 456 продаж)  
