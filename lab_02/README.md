@@ -227,7 +227,7 @@ FROM products;
 | Ресурс | Описание | Ссылка |
 |--------|----------|--------|
 | 📚 **Репозиторий GitHub** | Все материалы лабораторной работы | [`practicum-sql`](https://github.com/Margarita-Eskova/practicum-sql) |
-| 💾 **SQL-запросы** | Все запросы в одном файле | [`lab_02/sql`](https://github.com/Margarita-Eskova/practicum-sql/blob/main/lab_02/sql) |
+| 💾 **SQL-запросы** | Все запросы в одном файле с пояснениями | [`lab_02/sql`](https://github.com/Margarita-Eskova/practicum-sql/blob/main/lab_02/sql) |
 | 📸 **Папка со скриншотами** | Скриншоты результатов | [`lab_02/screenshots/`](https://github.com/Margarita-Eskova/practicum-sql/tree/main/lab_02/screenshots) |
 
 ---
