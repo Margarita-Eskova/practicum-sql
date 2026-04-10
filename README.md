@@ -13,14 +13,14 @@
 
 ## 📁 Структура репозитория
 
-| Папка | Лабораторная работа | Тема | Ссылка на отчёт |
-|-------|---------------------|------|-----------------|
-| `lab_01` | №1 | SELECT, фильтрация, CRUD | [README](lab_01/README.md) |
-| `lab_02` | №2 | JOIN, UNION, CASE, COALESCE | [README](lab_02/README.md) |
-| `lab_03` | №3 | Агрегация данных (GROUP BY, HAVING) | [README](lab_03/README.md) |
-| `lab_04` | №4 | Оконные функции (RANK, LEAD, AVG с окном) | [README](lab_04/README.md) |
-| `lab_05` | №5 | Оптимизация запросов (индексы, EXPLAIN ANALYZE) | [README](lab_05/README.md) |
-| `practical_work_01` | Практическая работа | Продвинутые возможности PostgreSQL (даты, JSON, массивы, текстовая аналитика) | [README](practical_work_01/README.md) |
+| Папка | Лабораторная работа | Тема | Статус | Ссылка на отчёт |
+|-------|---------------------|------|--------|-----------------|
+| `lab_01` | №1 | SELECT, фильтрация, CRUD | ✅ **Выполнено** | [README](lab_01/README.md) |
+| `lab_02` | №2 | JOIN, UNION, CASE, COALESCE | ✅ **Выполнено** | [README](lab_02/README.md) |
+| `lab_03` | №3 | Агрегация данных (GROUP BY, HAVING) | ✅ **Выполнено** | [README](lab_03/README.md) |
+| `lab_04` | №4 | Оконные функции (RANK, LEAD, AVG с окном) | ✅ **Выполнено** | [README](lab_04/README.md) |
+| `lab_05` | №5 | Оптимизация запросов (индексы, EXPLAIN ANALYZE) | ✅ **Выполнено** | [README](lab_05/README.md) |
+| `practical_work_01` | Практическая работа | Продвинутые возможности PostgreSQL (даты, JSON, массивы, текстовая аналитика) | ✅ **Выполнено** | [README](practical_work_01/README.md) |
 
 ---
 
