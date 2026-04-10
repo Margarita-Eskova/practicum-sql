@@ -159,7 +159,7 @@ ORDER BY avg_price DESC;
 | Ресурс | Описание | Ссылка |
 |--------|----------|--------|
 | 📚 **Репозиторий GitHub** | Все материалы лабораторной работы | [`practicum-sql`](https://github.com/Margarita-Eskova/practicum-sql) |
-| 💾 **SQL-запросы** | Все запросы в одном файле с пояснениями | [`lab_03/sql`](https://github.com/Margarita-Eskova/practicum-sql/blob/main/lab_03/sql) |
+| 💾 **SQL-запросы** | Все запросы в одном файле с пояснениями | [`lab_03/sql/lab_03.sql`](https://github.com/Margarita-Eskova/practicum-sql/blob/main/lab_03/sql/lab_03.sql) |
 | 📸 **Папка со скриншотами** | Скриншоты результатов | [`lab_03/screenshots/`](https://github.com/Margarita-Eskova/practicum-sql/tree/main/lab_03/screenshots) |
 
 ---
