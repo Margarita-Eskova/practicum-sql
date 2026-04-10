@@ -27,7 +27,7 @@
 
 **Результат проверки подключения:**
 
-![test_connection.png](./screenshots/test_connection.png)
+<img width="543" height="429" alt="test_connection" src="https://github.com/user-attachments/assets/8fdb133b-0467-476a-9a8d-711f63ffb524" />
 
 Подключение успешно, можно выполнять запросы.
 
@@ -65,3 +65,31 @@ FROM sales
 GROUP BY EXTRACT(DOW FROM sales_transaction_date)
 ORDER BY number_of_sales DESC;
 ```
+
+**Результат:**
+
+![1_a](./screenshots/1_a.png)
+
+**Анализ:**  
+- Наибольшее количество продаж приходится на **вторник** (5 456 продаж)  
+- Наименьшее — на **субботу** (5 282 продажи)  
+- Разница между днём-лидером и аутсайдером составляет всего 174 продажи, что говорит о равномерной активности в течение недели
+
+**Вывод:** Пик продаж наблюдается в середине недели (вторник), а минимальная активность — в выходные (суббота). Это может быть связано с тем, что покупатели чаще совершают покупки в рабочие дни.
+
+---
+
+## 📊 Задание 3 (А). Квартальный отчет
+
+**Задача:** Вывести сумму продаж (`sales_amount`) с разбивкой по кварталам и годам (например, "2019 Q1").
+
+**Решение:**
+```sql
+SELECT 
+    EXTRACT(YEAR FROM sales_transaction_date) AS year,
+    EXTRACT(QUARTER FROM sales_transaction_date) AS quarter,
+    CONCAT('Q', EXTRACT(QUARTER FROM sales_transaction_date), ' ', EXTRACT(YEAR FROM sales_transaction_date)) AS quarter_label,
+    SUM(sales_amount) AS total_sales
+FROM sales
+GROUP BY year, quarter, quarter_label
+ORDER BY year, quarter;
