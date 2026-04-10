@@ -51,4 +51,5 @@ WHERE state IS NULL;
 ```
 
 **Результат:**
+
 ![1_task](./screenshots/1_task.png)
