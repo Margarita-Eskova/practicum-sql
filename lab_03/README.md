@@ -106,3 +106,22 @@ ORDER BY avg_price DESC;
 
 ![3_check](./screenshots/3_check.png)
 
+**Вывод:**  
+- `automobile` — средняя цена ~52 000 (не попадает в диапазон 500–5000)  
+- `scooter` — средняя цена ~578 (попадает в диапазон)
+
+### Основной запрос
+
+```sql
+SELECT 
+    product_type,
+    ROUND(AVG(base_msrp), 2) AS avg_price
+FROM products
+GROUP BY product_type
+HAVING AVG(base_msrp) BETWEEN 500 AND 5000
+ORDER BY avg_price DESC;
+```
+**Результат:**
+
+![3_task](./screenshots/3_task.png)
+
