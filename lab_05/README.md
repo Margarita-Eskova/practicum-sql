@@ -63,13 +63,21 @@
 
 Для выполнения заданий 2 и 3 потребовались таблицы `sales` и `salespeople` в локальной базе `mylocaldb`. Они были скопированы из базы `teacher_data` с помощью команд:
 
+#### Копирование таблицы `sales`
+
 ```bash
 pg_dump -h localhost -p 5433 -U postgres -t sales teacher_data | psql -h localhost -p 5433 -U postgres -d mylocaldb
 ```
 
 **Результат:**
 
+![copy_sales](./screenshots/copy_sales.png)
+
 **Проверка наличия таблицы в mylocaldb**
+
+![check_sales](./screenshots/check_sales.png)
+
+#### Копирование таблицы `salespeople`
 
 ```bash
 pg_dump -h localhost -p 5433 -U postgres -t salespeople teacher_data | psql -h localhost -p 5433 -U postgres -d mylocaldb
@@ -77,4 +85,8 @@ pg_dump -h localhost -p 5433 -U postgres -t salespeople teacher_data | psql -h l
 
 **Результат:**
 
+![copy_salespeople](./screenshots/copy_salespeople.png)
+
 **Проверка наличия таблицы в mylocaldb**
+
+![check_salespeople](./screenshots/check_salespeople.png)
